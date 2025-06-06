@@ -178,19 +178,20 @@
   <header>
     <img src="images/logo.png" alt="Ramos Crane Logo" />
     <h1>RAMOS Crane Connect & Haul Services</h1>
-    <p>Reliable • Certified • Ready to Move Heavy</p>
+    <p>Connecting Crane Operators with Opportunities — We Bring the Work to You</p>
   </header>
 
   <nav>
     <button onclick="showSection('about')">About Us</button>
     <button onclick="showSection('services')">Services</button>
     <button onclick="showSection('quote')">Request Quote</button>
+    <button onclick="showSection('apply')">Apply for Leads</button>
     <button onclick="showSection('contact')">Contact</button>
   </nav>
 
   <section id="about" class="active">
     <h2>About Us</h2>
-    <p>With over 7 years of experience in the heavy equipment and crane industry, Ramos Crane Connect & Haul Services delivers professional, NCCCO-certified crane and transport solutions across Florida. We prioritize safety, precision, and efficiency to get your job done right.</p>
+    <p>Ramos Crane Connect & Haul Services is not a crane operator or transport provider — we are a specialized connector. Acting as a middleman and business broker, we help certified crane companies find high-paying work by sourcing jobs and managing client connections. You handle the lifting; we handle the leads. Earn more while we take care of logistics and sales — all for just a 7% commission per completed job.</p>
   </section>
 
   <section id="services">
@@ -200,22 +201,32 @@
       <button onclick="toggleDetail('haul')">Heavy Equipment Hauling</button>
       <button onclick="toggleDetail('connect')">Container Moving</button>
       <button onclick="toggleDetail('hazmat')">Hazmat Transport</button>
+      <button onclick="toggleDetail('escort')">Oversize Load Escort</button>
+      <button onclick="toggleDetail('emergency')">Emergency Dispatch</button>
     </div>
     <div id="knuckle" class="service-details">
       <h3>Knuckle Boom Crane Lifting</h3>
-      <p>Expert handling of complex lifting tasks in tight or challenging spaces using precision-controlled knuckle boom cranes.</p>
+      <p>Expert handling of complex lifting tasks in tight or challenging spaces using precision-controlled knuckle boom cranes. We match you with clients needing this specialized service.</p>
     </div>
     <div id="haul" class="service-details">
       <h3>Heavy Equipment Hauling</h3>
-      <p>Secure and timely transport of construction and industrial machinery with reliable route planning and safety checks.</p>
+      <p>We connect certified haulers with construction companies, industrial clients, and municipalities needing reliable and timely transport for heavy machinery.</p>
     </div>
     <div id="connect" class="service-details">
       <h3>Container Moving</h3>
-      <p>Professional loading, relocation, and unloading of containers, tailored to commercial, construction, or port jobs.</p>
+      <p>Whether it's job sites, ports, or yards, we refer you to customers needing container loading, transport, and relocation handled efficiently.</p>
     </div>
     <div id="hazmat" class="service-details">
       <h3>Hazmat Transport</h3>
-      <p>Fully certified and compliant hazardous material transport service with trained and licensed operators.</p>
+      <p>We refer qualified Hazmat-certified operators to businesses with compliant hazardous material transportation needs.</p>
+    </div>
+    <div id="escort" class="service-details">
+      <h3>Oversize Load Escort Services</h3>
+      <p>Ensure safety and compliance with our escort vehicle referrals for oversize loads. We help coordinate pilot vehicles for both short- and long-haul oversized transport.</p>
+    </div>
+    <div id="emergency" class="service-details">
+      <h3>Emergency Job Dispatch</h3>
+      <p>We’re available 24/7 to match you with urgent job requests when clients need immediate crane or haul assistance. Stay ready and get notified fast.</p>
     </div>
   </section>
 
@@ -230,12 +241,25 @@
     </form>
   </section>
 
+  <section id="apply">
+    <h2>Construction Companies – Apply for Services</h2>
+    <p>If you're a construction company looking for reliable crane or haul services, you're in the right place. We go the extra mile to connect you with certified professionals that match your needs.</p>
+    <p>You can either wait for us to reach out — we actively search and contact companies that need lifting and hauling — or speed up the process by applying through our website. Once we receive your application, we take care of everything else: vetting, coordination, and execution.</p>
+    <form action="#" method="post">
+      <input type="text" name="company" placeholder="Company Name" required />
+      <input type="email" name="email" placeholder="Contact Email" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <textarea name="details" rows="5" placeholder="Briefly describe the type of service you need" required></textarea>
+      <button type="submit" class="submit">Apply Now</button>
+    </form>
+  </section>
+
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: yourname@email.com</p>
     <p>Phone: (123) 456-7890</p>
     <p>Service Area: Florida, USA</p>
-    <p>We are available 7 days a week for scheduling and emergency jobs.</p>
+    <p>We are available 7 days a week for scheduling and emergency job referrals.</p>
     <div class="social-links">
       <p>Follow us on:</p>
       <a href="https://www.facebook.com/YourPageName" target="_blank">Facebook</a>
