@@ -4,98 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramos Crane Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background-color: #f8f9fa;
-      color: #333;
+    :root {
+      --yellow: #ffca28;
+      --dark-gray: #2e2e2e;
+      --light-gray: #e0e0e0;
+      --dark-blue: #1a237e;
+      --white: #ffffff;
     }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--light-gray);
+      color: var(--dark-gray);
+      line-height: 1.6;
+    }
+
     header {
-      background-color: #111;
-      color: white;
-      padding: 40px 20px;
+      background: linear-gradient(to right, var(--dark-blue), var(--dark-gray));
+      color: var(--white);
+      padding: 60px 20px;
       text-align: center;
     }
+
     header img {
-      width: 150px;
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
       margin-bottom: 10px;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 10px 0;
-    }
+
     nav {
-      background-color: #222;
-      text-align: center;
+      background-color: var(--dark-blue);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
+
     nav button {
       background: none;
       border: none;
-      color: white;
-      padding: 15px 20px;
+      color: var(--white);
+      padding: 15px 25px;
       font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s;
     }
+
     nav button:hover {
-      background-color: #444;
+      background-color: var(--yellow);
+      color: var(--dark-gray);
     }
+
     section {
-      padding: 40px 20px;
       display: none;
-      max-width: 900px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       animation: fadeIn 0.5s ease;
     }
+
     section.active {
       display: block;
     }
+
     h2 {
-      color: #111;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
-    ul {
-      padding-left: 20px;
+
+    .service-buttons {
+      text-align: center;
+      margin-top: 20px;
     }
+
+    .service-buttons button {
+      background-color: var(--yellow);
+      color: var(--dark-gray);
+      border: none;
+      margin: 8px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .service-buttons button:hover {
+      background-color: #ffb300;
+    }
+
+    .service-details {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background-color: var(--light-gray);
+      border-left: 5px solid var(--dark-blue);
+      border-radius: 8px;
+    }
+
+    .service-details.active {
+      display: block;
+    }
+
     form {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
     }
+
     input, textarea {
-      padding: 10px;
+      padding: 12px;
       font-size: 1rem;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
     }
+
     button.submit {
-      background-color: #111;
-      color: white;
+      background-color: var(--yellow);
+      color: var(--dark-gray);
       border: none;
-      padding: 10px 20px;
+      padding: 12px;
       font-size: 1rem;
+      border-radius: 6px;
       cursor: pointer;
-      border-radius: 5px;
     }
+
     button.submit:hover {
-      background-color: #333;
+      background-color: #ffb300;
     }
+
     footer {
       text-align: center;
-      background-color: #111;
-      color: white;
+      background-color: var(--dark-gray);
+      color: var(--white);
       padding: 20px;
+      margin-top: 40px;
     }
+
     .social-links {
       margin-top: 20px;
+      text-align: center;
     }
+
     .social-links a {
-      color: white;
+      color: var(--yellow);
       text-decoration: none;
       margin: 0 10px;
+      font-weight: bold;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -123,13 +195,28 @@
 
   <section id="services">
     <h2>Our Services</h2>
-    <ul>
-      <li><strong>Knuckle Boom Crane Lifting:</strong> Expert handling of complex lifting tasks in tight spaces.</li>
-      <li><strong>Heavy Equipment Hauling:</strong> Secure and timely transport of construction and industrial machinery.</li>
-      <li><strong>Container Moving:</strong> Full-service loading, relocation, and unloading of large containers.</li>
-      <li><strong>Rigging & Signal Services:</strong> Qualified signal persons and riggers ensure safe lifts.</li>
-      <li><strong>Hazmat Transport:</strong> Certified for handling hazardous material transport with full compliance.</li>
-    </ul>
+    <div class="service-buttons">
+      <button onclick="toggleDetail('knuckle')">Knuckle Boom Crane</button>
+      <button onclick="toggleDetail('haul')">Heavy Equipment Hauling</button>
+      <button onclick="toggleDetail('connect')">Container Moving</button>
+      <button onclick="toggleDetail('hazmat')">Hazmat Transport</button>
+    </div>
+    <div id="knuckle" class="service-details">
+      <h3>Knuckle Boom Crane Lifting</h3>
+      <p>Expert handling of complex lifting tasks in tight or challenging spaces using precision-controlled knuckle boom cranes.</p>
+    </div>
+    <div id="haul" class="service-details">
+      <h3>Heavy Equipment Hauling</h3>
+      <p>Secure and timely transport of construction and industrial machinery with reliable route planning and safety checks.</p>
+    </div>
+    <div id="connect" class="service-details">
+      <h3>Container Moving</h3>
+      <p>Professional loading, relocation, and unloading of containers, tailored to commercial, construction, or port jobs.</p>
+    </div>
+    <div id="hazmat" class="service-details">
+      <h3>Hazmat Transport</h3>
+      <p>Fully certified and compliant hazardous material transport service with trained and licensed operators.</p>
+    </div>
   </section>
 
   <section id="quote">
@@ -165,6 +252,13 @@
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
+    }
+
+    function toggleDetail(id) {
+      const detail = document.getElementById(id);
+      const allDetails = document.querySelectorAll('.service-details');
+      allDetails.forEach(el => el.classList.remove('active'));
+      detail.classList.add('active');
     }
   </script>
 </body>
