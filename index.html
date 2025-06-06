@@ -3,154 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramos Crane Connect & Haul Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <title>Ramos Crane Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
       color: #333;
-      line-height: 1.6;
     }
-
     header {
-      background: linear-gradient(to right, #111, #333);
-      color: white;
-      padding: 60px 20px 40px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    header img {
-      width: 220px;
-      height: auto;
-      margin-bottom: 25px;
-      filter: drop-shadow(0px 0px 6px rgba(255,255,255,0.1));
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #222;
-      border-bottom: 3px solid #f2c14e;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: #f2c14e;
-      color: #111;
-      margin: 10px auto;
-      padding: 15px 20px;
-      max-width: 600px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: transform 0.3s ease;
-    }
-
-    ul li:hover {
-      transform: scale(1.03);
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-    }
-
-    footer {
       background-color: #111;
       color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.95rem;
-      box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      ul li {
-        font-size: 1rem;
-        padding: 12px;
-      }
+    header img {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+    nav {
+      background-color: #222;
+      text-align: center;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background-color: #444;
+    }
+    section {
+      padding: 40px 20px;
+      display: none;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 0.5s ease;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      color: #111;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button.submit {
+      background-color: #111;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button.submit:hover {
+      background-color: #333;
+    }
+    footer {
+      text-align: center;
+      background-color: #111;
+      color: white;
+      padding: 20px;
+    }
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="images/logo.png.png" alt="Ramos Crane Logo" />
+    <img src="images/logo.png" alt="Ramos Crane Logo" />
     <h1>RAMOS Crane Connect & Haul Services</h1>
     <p>Reliable • Certified • Ready to Move Heavy</p>
   </header>
 
-  <section>
+  <nav>
+    <button onclick="showSection('about')">About Us</button>
+    <button onclick="showSection('services')">Services</button>
+    <button onclick="showSection('quote')">Request Quote</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+  <section id="about" class="active">
     <h2>About Us</h2>
-    <p>Over 4 years of experience in the crane and hauling industry. We deliver certified, efficient, and safe lifting and transport services across Florida. Ramos Crane is your trusted partner for moving the heavy and handling the complex.</p>
+    <p>With over 7 years of experience in the heavy equipment and crane industry, Ramos Crane Connect & Haul Services delivers professional, NCCCO-certified crane and transport solutions across Florida. We prioritize safety, precision, and efficiency to get your job done right.</p>
   </section>
 
-  <section>
+  <section id="services">
     <h2>Our Services</h2>
     <ul>
-      <li>Knuckle Boom Crane Lifting</li>
-      <li>Heavy Equipment Hauling</li>
-      <li>Container Moving</li>
-      <li>Rigging & Signal Services</li>
-      <li>Hazmat Transport Available</li>
+      <li><strong>Knuckle Boom Crane Lifting:</strong> Expert handling of complex lifting tasks in tight spaces.</li>
+      <li><strong>Heavy Equipment Hauling:</strong> Secure and timely transport of construction and industrial machinery.</li>
+      <li><strong>Container Moving:</strong> Full-service loading, relocation, and unloading of large containers.</li>
+      <li><strong>Rigging & Signal Services:</strong> Qualified signal persons and riggers ensure safe lifts.</li>
+      <li><strong>Hazmat Transport:</strong> Certified for handling hazardous material transport with full compliance.</li>
     </ul>
   </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> ramoscranehaul@gmail.com</p>
-    <p><strong>Phone:</strong> (860) 789-7488</p>
-    <p><strong>Service Area:</strong> Florida, USA</p>
+  <section id="quote">
+    <h2>Request a Quote</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <textarea name="details" rows="5" placeholder="Describe your job or request" required></textarea>
+      <button type="submit" class="submit">Send Request</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: yourname@email.com</p>
+    <p>Phone: (123) 456-7890</p>
+    <p>Service Area: Florida, USA</p>
+    <p>We are available 7 days a week for scheduling and emergency jobs.</p>
+    <div class="social-links">
+      <p>Follow us on:</p>
+      <a href="https://www.facebook.com/YourPageName" target="_blank">Facebook</a>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Ramos Crane Connect & Haul Services. All rights reserved.
+    &copy; 2025 Ramos Crane Connect & Haul Services
   </footer>
 
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
-
