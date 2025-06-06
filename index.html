@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramos Crane Services</title>
+  <meta name="description" content="Ramos Crane Connect & Haul Services - Connecting crane and hauling contractors with jobs in Florida.">
+  <meta name="keywords" content="crane jobs, hauling, Florida, heavy equipment, logistics, Ramos Crane">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -12,6 +15,10 @@
       --light-gray: #e0e0e0;
       --dark-blue: #1a237e;
       --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     * {
@@ -176,17 +183,17 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Ramos Crane Logo" />
+    <img src="images/logo.png" alt="Ramos Crane Connect & Haul Logo" />
     <h1>RAMOS Crane Connect & Haul Services</h1>
     <p>Connecting Crane Operators with Opportunities — We Bring the Work to You</p>
   </header>
 
   <nav>
-    <button onclick="showSection('about')">About Us</button>
-    <button onclick="showSection('services')">Services</button>
-    <button onclick="showSection('quote')">Request Quote</button>
-    <button onclick="showSection('apply')">Apply for Leads</button>
-    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="showSection('about')" aria-label="About Us">About Us</button>
+    <button onclick="showSection('services')" aria-label="Our Services">Services</button>
+    <button onclick="showSection('quote')" aria-label="Request a Quote">Request Quote</button>
+    <button onclick="showSection('apply')" aria-label="Apply for Leads">Apply for Leads</button>
+    <button onclick="showSection('contact')" aria-label="Contact Us">Contact</button>
   </nav>
 
   <section id="about" class="active">
@@ -232,7 +239,7 @@
 
   <section id="quote">
     <h2>Request a Quote</h2>
-    <form action="#" method="post">
+    <form action="mailto:ramoscranehaul@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <input type="text" name="phone" placeholder="Phone Number" required />
@@ -245,7 +252,7 @@
     <h2>Construction Companies – Apply for Services</h2>
     <p>If you're a construction company looking for reliable crane or haul services, you're in the right place. We go the extra mile to connect you with certified professionals that match your needs.</p>
     <p>You can either wait for us to reach out — we actively search and contact companies that need lifting and hauling — or speed up the process by applying through our website. Once we receive your application, we take care of everything else: vetting, coordination, and execution.</p>
-    <form action="#" method="post">
+    <form action="mailto:ramoscranehaul@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="company" placeholder="Company Name" required />
       <input type="email" name="email" placeholder="Contact Email" required />
       <input type="text" name="phone" placeholder="Phone Number" required />
@@ -284,6 +291,15 @@
       allDetails.forEach(el => el.classList.remove('active'));
       detail.classList.add('active');
     }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
   </script>
 </body>
 </html>
